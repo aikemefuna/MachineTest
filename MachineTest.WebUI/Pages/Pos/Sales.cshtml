@@ -1,0 +1,146 @@
+﻿@page
+@model MachineTest.WebUI.Pages.Pos.SalesModel
+@{
+}
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <div class="form-group row">
+                        @*<label class="col-sm-1 control-label text-right">Filter :</label>*@
+
+                        <div class="col-sm-2">
+                            <label>From</label>
+                            <input type="date" id="from" required class="form-control" placeholder="Start Date" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>To</label>
+                            <input type="date" id="to" class="form-control" placeholder="End Date" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Country</label>
+                            <select asp-for="CountryCode" asp-items="@(new SelectList(Model.Countries,"CountryCode","CountryName"))" required id="countryCodeFilter" data-placeholder="Choose a Country..." class="chosen-select form-control" tabindex="2">
+                                <option value="">Please select</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Region</label>
+                            <select id="regionCodeFilter" required data-placeholder="Choose a region..." class="chosen-select form-control" tabindex="2">
+                                <option value="">Please select</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <label>City</label>
+                            <select id="cityCodeFilter"required data-placeholder="Choose a city..." class="chosen-select form-control" tabindex="2">
+                                <option value="">Please select</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <label>Filter</label>
+                            <button class="btn btn-success"  id="btn-Filter"type="button"><i class="fa fa-search"></i>&nbsp;Search</button>
+                        </div>
+                        <div class="col-sm-1">
+                            <label>Reset</label>
+                            <button class="btn btn-warning"  id="btn-Reset"type="button"><i class="fa fa-search"></i>&nbsp;Reset</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ibox-content">
+                    
+                    <div class="form-group row">
+                        <div class="col-sm-1">
+                            <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#SalesModal"><i class="fa fa-plus"></i>&nbsp;Add New</button>
+
+                        </div>
+
+                        
+                    </div>
+                    <div class="table-responsive">
+
+                        <div id="salesContainer"></div>
+
+                        <div id="SalesModal" class="modal fade" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header"><h3 class="m-t-none m-b">Point of Sales</h3></div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <form role="form">
+                                                <div class="col-sm-12 ">
+                                                    <div class="form-group">
+
+                                                        <label>Customer Name</label>
+                                                        <input asp-for="CustomerName" placeholder="Enter customer name" class="form-control" id="CustomerName" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label> Country </label>
+                                                        <select asp-for="CountryCode" asp-items="@(new SelectList(Model.Countries,"CountryCode","CountryName"))" id="CountryCode" data-placeholder="Choose a Country..." class="chosen-select form-control" tabindex="2">
+                                                            <option value="">Please select</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Region </label>
+                                                        <select asp-for="RegionCode" id="RegionCode" data-placeholder="Choose a region..." class="chosen-select form-control" tabindex="2">
+                                                            <option value="">Please select</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>City</label>
+                                                        <select asp-for="CityCode" id="CityCode" data-placeholder="Choose a city..." class="chosen-select form-control" tabindex="2">
+                                                            <option value="">Please select</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Product</label>
+                                                        <select asp-for="ProductId" asp-items="@(new SelectList(Model.Products,"ProductId","ProductName"))" data-placeholder="Choose a product..." class="chosen-select form-control" tabindex="2">
+                                                            <option value="">Please select</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Quantity</label>
+                                                        <input placeholder="Enter sale qty" asp-for="Quantity" type="number" class="form-control" id="Quantity" required>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit" id="btn-AddSales"><strong>Submit</strong></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cover-spin"></div>
+</div>

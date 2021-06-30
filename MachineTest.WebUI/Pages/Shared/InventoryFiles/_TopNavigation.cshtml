@@ -1,0 +1,27 @@
+﻿@{ 
+    var pageName = "";
+}
+@if (pageName != null && pageName == "Dashboard")
+{
+
+}
+else
+{
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-sm-4">
+
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active">
+                    <strong>@ViewBag.PageName</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-sm-8">
+
+        </div>
+    </div>
+
+}

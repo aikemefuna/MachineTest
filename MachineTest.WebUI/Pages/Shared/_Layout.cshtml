@@ -1,0 +1,49 @@
+﻿
+@{
+    var ApiBaseUrl = HttpContextAccessor.HttpContext.Session.GetString("BaseUrl");
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewData["Title"] - Machine Test</title>
+
+    <partial name="InventoryFiles/_Styles" />
+</head>
+
+<body class="">
+    <input id="ApiBaseUrl" value="@ApiBaseUrl" type="hidden" />
+    <div id="wrapper">
+
+        <partial name="InventoryFiles/_SideLeftBar" />
+
+        @*@if (string.IsNullOrEmpty(ApiBaseUrl))
+            {
+                <script>
+                    window.location.href = "#";
+                </script>
+
+            }*@
+        <div id="page-wrapper" class="gray-bg">
+            <partial name="InventoryFiles/_FixedTopNavbar" />
+            <partial name="InventoryFiles/_TopNavigation" />
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+             
+                @RenderBody()
+            </div>
+
+            <partial name="InventoryFiles/_Footer" />
+        </div>
+    </div>
+
+    <partial name="InventoryFiles/_Scripts" />
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
+

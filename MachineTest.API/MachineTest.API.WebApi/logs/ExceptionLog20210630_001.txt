@@ -1,0 +1,1 @@
+2021-06-30 10:44:52.849 +01:00 [FTL] An Exception Error as occurred in 'GetSales' - 'SalesService' with the following details : - Input string was not in a correct format.

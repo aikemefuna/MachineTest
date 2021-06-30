@@ -1,0 +1,5 @@
+2021-06-30 10:01:25.402 +01:00 [FTL] An Exception Error as occurred in 'GetCountries' - 'LocationService' with the following details : - Could not find stored procedure 'SP_Countrys'.
+2021-06-30 10:02:56.495 +01:00 [FTL] An Exception Error as occurred in 'GetCountries' - 'LocationService' with the following details : - Could not find stored procedure 'SP_Countrys'.
+2021-06-30 10:05:04.937 +01:00 [FTL] An Exception Error as occurred in 'GetCountries' - 'LocationService' with the following details : - Could not find stored procedure 'SP_Countrys'.
+2021-06-30 10:31:43.698 +01:00 [FTL] An Exception Error as occurred in 'GetSales' - 'SalesService' with the following details : - SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+2021-06-30 10:44:46.460 +01:00 [FTL] An Exception Error as occurred in 'GetSales' - 'SalesService' with the following details : - Input string was not in a correct format.
